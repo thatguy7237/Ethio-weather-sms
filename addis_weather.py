@@ -6,8 +6,7 @@ response = requests.get(url)
 
 if response.status_code == 200:
     soup = BeautifulSoup(response.text, 'html.parser')
-    
-    # Current temperature
+    # This is the current temperature 
     temp_div = soup.find("div", class_="h2")
     temp = temp_div.text.strip() if temp_div else "N/A"
 
